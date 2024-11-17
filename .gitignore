@@ -1,7 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Firebase local admin service account key json
+firebase-admin-service-account-key.json
+
 # Fireabse emulator saved state
-.emulator*
+.emulator
 
 # dependencies
 /node_modules
@@ -13,9 +16,6 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
 # next.js
 /.next/
 /out/
@@ -26,14 +26,6 @@
 # misc
 .DS_Store
 *.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# env files (can opt-in for committing if needed)
-.env*
 
 # vercel
 .vercel

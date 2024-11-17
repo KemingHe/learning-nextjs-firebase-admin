@@ -1,23 +1,35 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
+
 import "./globals.css";
 
+import Header from "@components/Header";
+import AuthProviderClientWrapper from "@src/contexts/authContext/AuthProviderClientWrapper";
+
+// -----------------------------------------------------------------------------
 export const metadata: Metadata = {
 	title: "NextJS Fireabase Admin",
 	description:
 		"Template repo demo-ing Firebase client and admin auth ntegration with NextJS 14+.",
-	icons: {
-		icon: "icons/favicon.ico",
-	},
 };
 
+// -----------------------------------------------------------------------------
+interface RootLayoutProps {
+	children: ReactNode;
+}
+
+// -----------------------------------------------------------------------------
 export default function RootLayout({
 	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+}: Readonly<RootLayoutProps>): JSX.Element {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body>
+				<AuthProviderClientWrapper>
+					<Header />
+					<main>{children}</main>
+				</AuthProviderClientWrapper>
+			</body>
 		</html>
 	);
 }
