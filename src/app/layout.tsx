@@ -3,8 +3,9 @@ import type { ReactNode } from "react";
 
 import "./globals.css";
 
+import Footer from "@components/Footer";
 import Header from "@components/Header";
-import AuthProviderClientWrapper from "@src/contexts/authContext/AuthProviderClientWrapper";
+import AuthProviderClientWrapper from "@contexts/authContext/AuthProviderClientWrapper";
 
 // -----------------------------------------------------------------------------
 export const metadata: Metadata = {
@@ -24,11 +25,12 @@ export default function RootLayout({
 }: Readonly<RootLayoutProps>): JSX.Element {
 	return (
 		<html lang="en">
-			<body>
-				<AuthProviderClientWrapper>
-					<Header />
-					<main>{children}</main>
-				</AuthProviderClientWrapper>
+			<body className="flex flex-col min-h-screen">
+				<Header />
+				<main className="flex flex-col flex-grow justify-center items-center">
+					<AuthProviderClientWrapper>{children}</AuthProviderClientWrapper>
+				</main>
+				<Footer />
 			</body>
 		</html>
 	);

@@ -1,6 +1,8 @@
+"use client";
+
 export default function Header(): JSX.Element {
 	return (
-		<header className="header flex justify-center p-5">
+		<header className="header flex justify-center items-center p-5">
 			<label className="flex cursor-pointer gap-2">
 				<span className="label-text">Toggle Theme</span>
 				<input

@@ -51,10 +51,8 @@ export function AuthProvider({
 		[clientRouter, pathname, user, loadingUser, errorUser],
 	);
 
-	if (loadingUser)
-		return <LoadingComponent message={"TODO: auth context loading message"} />;
-	if (errorUser)
-		return <ErrorComponent message={"TODO: auth context error message"} />;
+	if (loadingUser) return <LoadingComponent message={"Loading..."} />;
+	if (errorUser) return <ErrorComponent message={"Error Loading User Info."} />;
 	return (
 		<AuthContext.Provider value={authContextValue}>
 			{children}
