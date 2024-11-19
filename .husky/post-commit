@@ -2,5 +2,5 @@
 
 # Disable Husky during release-it to avoid infinite loop.
 export HUSKY=0
-pnpm release-it --ci
+pnpm release-it --ci --config release-it.json
 unset HUSKY
