@@ -9,15 +9,15 @@ import { LoadingCard } from "@components/LoadingCard";
 import { AuthProvider } from "@contexts/authContext/AuthContext";
 
 interface AuthProviderClientWrapperProps {
-	children: ReactNode;
+  children: ReactNode;
 }
 
 export default function AuthProviderClientWrapper({
-	children,
+  children
 }: Readonly<AuthProviderClientWrapperProps>): JSX.Element {
-	return (
-		<AuthProvider LoadingComponent={LoadingCard} ErrorComponent={ErrorCard}>
-			{children}
-		</AuthProvider>
-	);
+  return (
+    <AuthProvider LoadingComponent={LoadingCard} ErrorComponent={ErrorCard}>
+      {children}
+    </AuthProvider>
+  );
 }

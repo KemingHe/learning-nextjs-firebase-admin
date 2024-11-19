@@ -1,8 +1,8 @@
 import type { FirebaseOptions } from "firebase/app";
 
 const firebaseConfig: FirebaseOptions =
-	// biome-ignore format: added alignment for clarity.
-	{
+  // biome-ignore format: added alignment for clarity.
+  {
     apiKey           : process.env.NEXT_PUBLIC_FIREBASE_API_KEY             as string,
     authDomain       : process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN         as string,
     projectId        : process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID          as string,

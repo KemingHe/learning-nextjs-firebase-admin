@@ -17,42 +17,42 @@ export interface FirebaseAdminAppServices {
 
 // -----------------------------------------------------------------------------
 function formatPrivateKey(privateKey: string): string {
-	return privateKey.replace(/\\n/g, "\n");
+  return privateKey.replace(/\\n/g, "\n");
 }
 
 // -----------------------------------------------------------------------------
 export function firebaseAdminApp(): FirebaseAdminAppServices {
-	const projectId: string = firebaseAdminConfig.projectId;
-	const privateKey: string = formatPrivateKey(firebaseAdminConfig.privateKey);
-	const clientEmail: string = firebaseAdminConfig.clientEmail;
+  const projectId: string = firebaseAdminConfig.projectId;
+  const privateKey: string = formatPrivateKey(firebaseAdminConfig.privateKey);
+  const clientEmail: string = firebaseAdminConfig.clientEmail;
 
-	let fbAdminApp: App;
-	const fbAdminAppList: App[] | undefined = getApps();
+  let fbAdminApp: App;
+  const fbAdminAppList: App[] | undefined = getApps();
 
-	if (fbAdminAppList && fbAdminAppList.length > 0 && fbAdminAppList[0]) {
-		fbAdminApp = fbAdminAppList[0];
-	} else {
-		const cert: credential.Credential = credential.cert({
-			projectId,
-			privateKey,
-			clientEmail,
-		});
+  if (fbAdminAppList && fbAdminAppList.length > 0 && fbAdminAppList[0]) {
+    fbAdminApp = fbAdminAppList[0];
+  } else {
+    const cert: credential.Credential = credential.cert({
+      projectId,
+      privateKey,
+      clientEmail
+    });
 
-		fbAdminApp = initializeApp({
-			credential: cert,
-			projectId,
-		});
-	}
+    fbAdminApp = initializeApp({
+      credential: cert,
+      projectId
+    });
+  }
 
-	const fbAdminAuth = getAuth(fbAdminApp);
-	const fbAdminStore = getFirestore(fbAdminApp);
+  const fbAdminAuth = getAuth(fbAdminApp);
+  const fbAdminStore = getFirestore(fbAdminApp);
 
-	return { fbAdminApp, fbAdminAuth, fbAdminStore };
+  return { fbAdminApp, fbAdminAuth, fbAdminStore };
 }
 
 // -----------------------------------------------------------------------------
 export const {
-	fbAdminApp,
-	fbAdminAuth,
-	fbAdminStore,
+  fbAdminApp,
+  fbAdminAuth,
+  fbAdminStore
 }: FirebaseAdminAppServices = firebaseAdminApp();

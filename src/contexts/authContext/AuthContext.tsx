@@ -24,22 +24,22 @@ export interface AuthContextProps {
 
 // -----------------------------------------------------------------------------
 const AuthContext: Context<AuthContextProps | undefined> = createContext<
-	AuthContextProps | undefined
+  AuthContextProps | undefined
 >(undefined);
 
 // -----------------------------------------------------------------------------
 export function AuthProvider({
-	LoadingComponent,
-	ErrorComponent,
-	children,
+  LoadingComponent,
+  ErrorComponent,
+  children
 }: ProviderProps): JSX.Element {
-	const clientRouter = useRouter();
-	const pathname = usePathname();
+  const clientRouter = useRouter();
+  const pathname = usePathname();
 
-	const [user, loadingUser, errorUser] = useAuthState(fbAuth);
-	const authContextValue = useMemo(
-		() =>
-			(
+  const [user, loadingUser, errorUser] = useAuthState(fbAuth);
+  const authContextValue = useMemo(
+    () =>
+      (
       // biome-ignore format: added alignment for clarity.
       {
         clientRouter,
@@ -48,25 +48,25 @@ export function AuthProvider({
         authContextLoading: loadingUser,
         authContextError  : errorUser
     }),
-		[clientRouter, pathname, user, loadingUser, errorUser],
-	);
+    [clientRouter, pathname, user, loadingUser, errorUser]
+  );
 
-	if (loadingUser) return <LoadingComponent message={"Loading..."} />;
-	if (errorUser) return <ErrorComponent message={"Error Loading User Info."} />;
-	return (
-		<AuthContext.Provider value={authContextValue}>
-			{children}
-		</AuthContext.Provider>
-	);
+  if (loadingUser) return <LoadingComponent message={"Loading..."} />;
+  if (errorUser) return <ErrorComponent message={"Error Loading User Info."} />;
+  return (
+    <AuthContext.Provider value={authContextValue}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 // -----------------------------------------------------------------------------
 export function useAuthContext(): AuthContextProps {
-	const context: AuthContextProps | undefined = useContext(AuthContext);
-	if (!context) {
-		throw new Error(
-			'useAuthContext returns "undefined". Make sure the calling component is a children of <AuthProvider>.',
-		);
-	}
-	return context;
+  const context: AuthContextProps | undefined = useContext(AuthContext);
+  if (!context) {
+    throw new Error(
+      'useAuthContext returns "undefined". Make sure the calling component is a children of <AuthProvider>.'
+    );
+  }
+  return context;
 }

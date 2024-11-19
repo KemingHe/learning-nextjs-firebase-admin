@@ -4,7 +4,8 @@
 firebase-admin-service-account-key.json
 
 # Fireabse emulator saved state
-.emulator
+/.emulator
+/.emulators
 
 # dependencies
 /node_modules

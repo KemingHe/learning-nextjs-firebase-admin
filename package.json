@@ -1,33 +1,61 @@
 {
-	"name": "learning-nextjs-firebase-admin",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev --turbopack",
-		"build": "next build",
-		"start": "next start",
-		"lint": "biome check --write ."
-	},
-	"dependencies": {
-		"@heroicons/react": "^2.1.5",
-		"firebase": "^11.0.2",
-		"firebase-admin": "^13.0.0",
-		"next": "15.0.3",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
-		"react-firehooks": "^4.2.0",
-		"server-only": "^0.0.1",
-		"uuid": "^11.0.3"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@types/node": "^20.17.6",
-		"@types/react": "^18.3.12",
-		"@types/react-dom": "^18.3.1",
-		"daisyui": "^4.12.14",
-		"postcss": "^8.4.49",
-		"tailwindcss": "^3.4.15",
-		"typescript": "^5.6.3"
-	},
-	"packageManager": "pnpm@9.13.2+sha512.88c9c3864450350e65a33587ab801acf946d7c814ed1134da4a924f6df5a2120fd36b46aab68f7cd1d413149112d53c7db3a4136624cfd00ff1846a0c6cef48a"
+  "private": true,
+  "type": "module",
+  "name": "learning-nextjs-firebase-admin",
+  "description": "Template repo demo-ing Firebase client and admin auth ntegration with NextJS 14+.",
+  "version": "0.1.0",
+  "keywords": ["nextjs", "firebase", "firebase-admin"],
+  "homepage": "https://firebaseadmin.learn.data-glow.com",
+  "license": "MIT",
+  "author": {
+    "name": "Keming He",
+    "email": "keminghe.career@gmail.com",
+    "url": "https://www.linkedin.com/in/keminghe/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KemingHe/learning-nextjs-firebase-admin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KemingHe/learning-nextjs-firebase-admin/issues",
+    "email": "keminghe.career@gmail.com"
+  },
+  "scripts": {
+    "prepare": "husky || true",
+    "emulators": "firebase emulators:start --import .emulators --export-on-exit",
+    "lint": "biome check --write .",
+    "build": "next build",
+    "test": "vitest",
+    "dev": "next dev --turbopack",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "firebase": "^11.0.2",
+    "firebase-admin": "^13.0.0",
+    "next": "15.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-firehooks": "^4.2.0",
+    "server-only": "^0.0.1",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@release-it/conventional-changelog": "^9.0.3",
+    "@types/node": "^20.17.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "daisyui": "^4.12.14",
+    "husky": "^9.1.7",
+    "postcss": "^8.4.49",
+    "release-it": "^17.10.0",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite-tsconfig-paths": "^5.1.2",
+    "vitest": "^2.1.5"
+  },
+  "packageManager": "pnpm@9.13.2+sha512.88c9c3864450350e65a33587ab801acf946d7c814ed1134da4a924f6df5a2120fd36b46aab68f7cd1d413149112d53c7db3a4136624cfd00ff1846a0c6cef48a"
 }
