@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.1](https://github.com/KemingHe/learning-nextjs-firebase-admin/compare/v0.2.0...v0.2.1) (2024-11-19)
+
+### Bug Fixes
+
+* **post-commit:** fixed release-it not applying config issue ([663f97b](https://github.com/KemingHe/learning-nextjs-firebase-admin/commit/663f97b63fc2114d6bfc79b6c378345e883e64de))
+
 ## 0.2.0 (2024-11-19)
 
 ### Features
