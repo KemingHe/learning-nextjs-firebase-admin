@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.4.1](https://github.com/KemingHe/learning-nextjs-firebase-admin/compare/v0.4.0...v0.4.1) (2024-11-20)
+
 ## [0.4.0](https://github.com/KemingHe/learning-nextjs-firebase-admin/compare/v0.3.0...v0.4.0) (2024-11-20)
 
 ### Features
