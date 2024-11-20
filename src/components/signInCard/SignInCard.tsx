@@ -1,22 +1,43 @@
-export interface SignInCardProps {
+import type { FormEvent } from "react";
+
+interface SignInCardProps {
   signInAction: (formData: FormData) => Promise<void>;
 }
 
-export function SignInCard({ signInAction }: SignInCardProps): JSX.Element {
+export default function SignInCard({
+  signInAction
+}: SignInCardProps): JSX.Element {
+  async function submitHandler(
+    event: FormEvent<HTMLFormElement>
+  ): Promise<void> {
+    event.preventDefault();
+    const formData: FormData = new FormData(event.currentTarget);
+    await signInAction(formData);
+  }
+
   return (
-    <div className="card shadow-lg">
+    <form
+      aria-labelledby="signInCardTitle"
+      className="card shadow-lg"
+      onSubmit={submitHandler}
+    >
       <div className="card-body flex flex-col justify-center items-center">
-        <form action={signInAction} className="space-y-2">
+        <h2 id="signInCardTitle" className="card-title text-lg font-bold">
+          Sign In
+        </h2>
+        <div className="space-y-2">
           <div className="form-control">
             <label className="label" htmlFor="email">
               Email
             </label>
             <input
+              aria-required="true"
+              className="input input-bordered w-full h-12"
               id="email"
               name="email"
               placeholder="buckeye.1@osu.edu"
+              required
               type="email"
-              className="input input-bordered w-full h-12"
             />
           </div>
           <button
@@ -25,8 +46,8 @@ export function SignInCard({ signInAction }: SignInCardProps): JSX.Element {
           >
             Sign In/Up
           </button>
-        </form>
+        </div>
       </div>
-    </div>
+    </form>
   );
 }

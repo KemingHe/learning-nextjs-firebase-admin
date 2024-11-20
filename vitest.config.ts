@@ -17,7 +17,7 @@ export default defineConfig({
     setupFiles: ["vitest.setup.ts"],
 
     // Allow tests to pass even if no test files are found.
-    passWithNoTests: true,
+    // passWithNoTests: true,
 
     // Resolve path aliases for test files, similar to tsconfig-paths.
     alias:

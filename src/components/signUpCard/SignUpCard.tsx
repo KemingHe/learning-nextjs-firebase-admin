@@ -1,20 +1,40 @@
-export interface SignUpCardProps {
+import type { FormEvent } from "react";
+interface SignUpCardProps {
   signUpAction: (formData: FormData) => Promise<void>;
 }
 
-export function SignUpCard({ signUpAction }: SignUpCardProps): JSX.Element {
+export default function SignUpCard({
+  signUpAction
+}: SignUpCardProps): JSX.Element {
+  async function submitHandler(
+    event: FormEvent<HTMLFormElement>
+  ): Promise<void> {
+    event.preventDefault();
+    const formData: FormData = new FormData(event.currentTarget);
+    await signUpAction(formData);
+  }
+
   return (
-    <div className="card shadow-lg">
+    <form
+      aria-labelledby="signUpCardTitle"
+      className="card shadow-lg"
+      onSubmit={submitHandler}
+    >
       <div className="card-body flex flex-col justify-center items-center">
-        <form action={signUpAction} className="space-y-2">
+        <h2 id="signUpCardTitle" className="card-title text-lg font-bold">
+          Sign Up
+        </h2>
+        <div className="space-y-2">
           <div className="form-control">
             <label className="label" htmlFor="fullName">
               Full Name
             </label>
             <input
+              aria-required="true"
               id="fullName"
               name="fullName"
               placeholder="Brutus Buckeye"
+              required
               type="text"
               className="input input-bordered w-full h-12"
             />
@@ -24,11 +44,13 @@ export function SignUpCard({ signUpAction }: SignUpCardProps): JSX.Element {
               Email
             </label>
             <input
+              aria-required="true"
+              className="input input-bordered w-full h-12"
               id="email"
               name="email"
               placeholder="buckeye.1@osu.edu"
+              required
               type="email"
-              className="input input-bordered w-full h-12"
             />
           </div>
           <div className="form-control">
@@ -36,10 +58,12 @@ export function SignUpCard({ signUpAction }: SignUpCardProps): JSX.Element {
               Password
             </label>
             <input
+              aria-required="true"
+              className="input input-bordered w-full h-12"
               id="password"
               name="password"
+              required
               type="password"
-              className="input input-bordered w-full h-12"
             />
           </div>
           <button
@@ -48,8 +72,8 @@ export function SignUpCard({ signUpAction }: SignUpCardProps): JSX.Element {
           >
             Sign In/Up
           </button>
-        </form>
+        </div>
       </div>
-    </div>
+    </form>
   );
 }

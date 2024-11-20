@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ThemeToggle component > matches the snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="flex cursor-pointer gap-2"
+    for="themeToggle"
+  >
+    <span
+      class="label-text"
+    >
+      Toggle Theme
+    </span>
+    <input
+      aria-label="Toggle theme"
+      class="toggle theme-controller"
+      id="themeToggle"
+      type="checkbox"
+      value="light"
+    />
+  </label>
+</DocumentFragment>
+`;

@@ -5,13 +5,13 @@ import { usePathname, useRouter } from "next/navigation";
 import { type Context, createContext, useContext, useMemo } from "react";
 import { useAuthState } from "react-firehooks/auth";
 
-import { fbAuth } from "@lib/firebaseClientApp";
+import { fbAuth } from "@lib/firebase/firebaseClientApp";
 
 import type { ProviderProps } from "@contexts/ProviderProps";
 
 // -----------------------------------------------------------------------------
 // biome-ignore format: added alignment for clarity.
-export interface AuthContextProps {
+export interface AuthContextReturnProps {
   // NextJS client router and current pathname.
   clientRouter      : ReturnType<typeof useRouter>;
   pathname          : string;
@@ -23,8 +23,8 @@ export interface AuthContextProps {
 }
 
 // -----------------------------------------------------------------------------
-const AuthContext: Context<AuthContextProps | undefined> = createContext<
-  AuthContextProps | undefined
+const AuthContext: Context<AuthContextReturnProps | undefined> = createContext<
+  AuthContextReturnProps | undefined
 >(undefined);
 
 // -----------------------------------------------------------------------------
@@ -61,8 +61,8 @@ export function AuthProvider({
 }
 
 // -----------------------------------------------------------------------------
-export function useAuthContext(): AuthContextProps {
-  const context: AuthContextProps | undefined = useContext(AuthContext);
+export function useAuthContext(): AuthContextReturnProps {
+  const context: AuthContextReturnProps | undefined = useContext(AuthContext);
   if (!context) {
     throw new Error(
       'useAuthContext returns "undefined". Make sure the calling component is a children of <AuthProvider>.'

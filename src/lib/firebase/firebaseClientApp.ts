@@ -12,7 +12,7 @@ import {
   getFirestore
 } from "firebase/firestore";
 
-import firebaseConfig from "@lib/firebaseConfig";
+import firebaseConfig from "@lib/firebase/firebaseConfig";
 
 // biome-ignore format: added alignment for clarity.
 export interface FirebaseClientAppServices {

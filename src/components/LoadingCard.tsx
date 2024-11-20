@@ -1,20 +1,19 @@
-"use client";
-
-export interface LoadingCardProps {
-  message: string;
-}
-
-export function LoadingCard({
+export default function LoadingCard({
   message
-}: Readonly<LoadingCardProps>): JSX.Element {
+}: Readonly<{ message: string }>): JSX.Element {
   return (
-    <div className="card shadow-lg">
+    <output aria-live="polite" className="card shadow-lg">
       <div className="card-body flex flex-col justify-center items-center">
         <div className="card-title h-12">
-          <span className="loading loading-spinner loading-lg" />
+          <span
+            aria-hidden={true}
+            className="loading loading-spinner loading-lg"
+          />
         </div>
-        <p className="text-center">{message}</p>
+        <p aria-label="Loading message" className="text-center">
+          {message}
+        </p>
       </div>
-    </div>
+    </output>
   );
 }

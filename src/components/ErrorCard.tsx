@@ -1,15 +1,15 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-export interface ErrorCardProps {
-  message: string;
-}
-
-export function ErrorCard({ message }: Readonly<ErrorCardProps>): JSX.Element {
+export default function ErrorCard({
+  message
+}: Readonly<{ message: string }>): JSX.Element {
   return (
-    <div className="card shadow-lg">
+    <div aria-live="assertive" className="card shadow-lg" role="alert">
       <div className="card-body flex flex-col justify-center items-center">
         <ExclamationTriangleIcon className="card-title text-red-500 h-12" />
-        <p className="text-center">{message}</p>
+        <p aria-label="Error message" className="text-center">
+          {message}
+        </p>
       </div>
     </div>
   );

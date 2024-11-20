@@ -1,6 +1,6 @@
 "use server";
 
-import { fbAdminStore } from "@lib/firebaseAdminApp";
+import { fbAdminStore } from "@lib/firebase/firebaseAdminApp";
 import type { DocumentReference } from "firebase-admin/firestore";
 import { v4 as uuidv4 } from "uuid";
 

@@ -6,7 +6,7 @@ export default function Footer(): JSX.Element {
       <aside>
         <p className="flex space-x-2">
           <span>Keming He</span>
-          <span>&#x2022;</span>
+          <span aria-hidden={true}>&#x2022;</span>
           <span>&#169; {new Date().getFullYear()}</span>
         </p>
       </aside>
