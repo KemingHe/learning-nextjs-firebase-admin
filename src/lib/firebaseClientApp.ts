@@ -1,10 +1,14 @@
 "use client";
 
 import { type FirebaseApp, getApps, initializeApp } from "firebase/app";
-import { type Auth, connectAuthEmulator, getAuth } from "firebase/auth";
+import {
+  type Auth,
+  // connectAuthEmulator,
+  getAuth
+} from "firebase/auth";
 import {
   type Firestore,
-  connectFirestoreEmulator,
+  // connectFirestoreEmulator,
   getFirestore
 } from "firebase/firestore";
 

@@ -4,8 +4,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 import Footer from "@components/Footer";
-import Header from "@components/Header";
-import AuthProviderClientWrapper from "@contexts/authContext/AuthProviderClientWrapper";
+import Navbar from "@components/navbar/Navbar";
 
 // -----------------------------------------------------------------------------
 export const metadata: Metadata = {
@@ -15,20 +14,15 @@ export const metadata: Metadata = {
 };
 
 // -----------------------------------------------------------------------------
-interface RootLayoutProps {
-  children: ReactNode;
-}
-
-// -----------------------------------------------------------------------------
 export default function RootLayout({
   children
-}: Readonly<RootLayoutProps>): JSX.Element {
+}: Readonly<{ children: ReactNode }>): JSX.Element {
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
-        <Header />
+        <Navbar />
         <main className="flex flex-col flex-grow justify-center items-center">
-          <AuthProviderClientWrapper>{children}</AuthProviderClientWrapper>
+          {children}
         </main>
         <Footer />
       </body>

@@ -1,10 +1,13 @@
+import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-  plugins: [tsconfigPaths()],
+  plugins: [tsconfigPaths(), react()],
 
   test: {
+    globals: true,
+    environment: "jsdom",
     include: ["src/**/*.test.ts", "src/**/*.test.tsx"],
 
     // Disable watch mode for routine and CI.
