@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0](https://github.com/KemingHe/learning-nextjs-firebase-admin/compare/v0.3.0...v0.4.0) (2024-11-20)
+
+### Features
+
+* **components/navbar/:** added responsive navbar ([b66a7e9](https://github.com/KemingHe/learning-nextjs-firebase-admin/commit/b66a7e9c35f777dc164cdd85c435d235d34157e5))
+
 ## 0.3.0 (2024-11-19)
 
 ### Features
