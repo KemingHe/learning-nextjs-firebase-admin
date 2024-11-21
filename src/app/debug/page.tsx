@@ -3,8 +3,8 @@
 import ErrorCard from "@components/ErrorCard";
 import LoadingCard from "@components/LoadingCard";
 import { NavLinkButton } from "@components/NavLinkButton";
-import SignInCard from "@components/signInCard/SignInCard";
-import SignUpCard from "@components/signUpCard/SignUpCard";
+import ProtoSignInCard from "@components/signInCard/ProtoSignInCard";
+import ProtoSignUpCard from "@components/signUpCard/ProtoSignUpCard";
 
 export default function DebugPage(): JSX.Element {
   return (
@@ -12,8 +12,8 @@ export default function DebugPage(): JSX.Element {
       <NavLinkButton href="/" text="Home" />
       <LoadingCard message="This is a loading message." />
       <ErrorCard message="This is an error message." />
-      <SignInCard signInAction={async (formData: FormData) => {}} />
-      <SignUpCard signUpAction={async (formData: FormData) => {}} />
+      <ProtoSignInCard signInAction={async (formData: FormData) => {}} />
+      <ProtoSignUpCard signUpAction={async (formData: FormData) => {}} />
     </div>
   );
 }

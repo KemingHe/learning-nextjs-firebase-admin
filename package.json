@@ -4,11 +4,7 @@
   "name": "learning-nextjs-firebase-admin",
   "description": "Template repo demo-ing Firebase client and admin auth ntegration with NextJS 14+.",
   "version": "0.5.0",
-  "keywords": [
-    "nextjs",
-    "firebase",
-    "firebase-admin"
-  ],
+  "keywords": ["nextjs", "firebase", "firebase-admin"],
   "homepage": "https://firebaseadmin.learn.data-glow.com",
   "license": "MIT",
   "author": {
@@ -28,11 +24,12 @@
     "prepare": "husky || true",
     "emulators": "firebase emulators:start --import .emulators --export-on-exit",
     "lint": "biome check --write .",
+    "lint:test": "pnpm lint && pnpm test:unit",
     "build": "next build",
     "test:unit": "vitest",
     "test:unit:update": "vitest --update",
     "test:e2e": "playwright test",
-    "test": "pnpm run test:unit && pnpm run test:e2e",
+    "test": "pnpm test:unit && pnpm test:e2e",
     "dev": "next dev --turbopack",
     "start": "next start"
   },
@@ -48,7 +45,8 @@
     "react-firehooks": "^4.2.0",
     "react-hook-form": "^7.53.2",
     "server-only": "^0.0.1",
-    "uuid": "^11.0.3"
+    "uuid": "^11.0.3",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

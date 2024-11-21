@@ -1,14 +1,10 @@
 "use client";
 
 import { type FirebaseApp, getApps, initializeApp } from "firebase/app";
-import {
-  type Auth,
-  // connectAuthEmulator,
-  getAuth
-} from "firebase/auth";
+import { type Auth, connectAuthEmulator, getAuth } from "firebase/auth";
 import {
   type Firestore,
-  // connectFirestoreEmulator,
+  connectFirestoreEmulator,
   getFirestore
 } from "firebase/firestore";
 
@@ -34,16 +30,16 @@ export function firebaseClientApp(): FirebaseClientAppServices {
   const fbAuth = getAuth(fbApp);
   const fbStore = getFirestore(fbApp);
 
-  // if (
-  // 	typeof window !== "undefined" &&
-  // 	window.location.hostname === "localhost"
-  // ) {
-  // 	connectAuthEmulator(fbAuth, "http://localhost:9099");
-  // 	connectFirestoreEmulator(fbStore, "localhost", 8080);
-  // 	console.log(
-  // 		"Successfully connected to Firebase Emulators for testing on localhost.",
-  // 	);
-  // }
+  if (
+    typeof window !== "undefined" &&
+    window.location.hostname === "localhost"
+  ) {
+    connectAuthEmulator(fbAuth, "http://localhost:9099");
+    connectFirestoreEmulator(fbStore, "localhost", 8080);
+    console.log(
+      "Successfully connected to Firebase Emulators for testing on localhost."
+    );
+  }
 
   return { fbApp, fbAuth, fbStore };
 }

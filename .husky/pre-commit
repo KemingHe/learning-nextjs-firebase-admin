@@ -3,8 +3,8 @@
 pnpm install
 pnpm update
 
-pnpm run lint
-pnpm run build
+pnpm lint
+pnpm build
 
 pnpm test
 

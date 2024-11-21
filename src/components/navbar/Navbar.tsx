@@ -6,8 +6,9 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import ThemeToggle from "@components/ThemeToggle";
-import NavbarNotificationBell from "@components/navbar/NavbarNotificationBell";
 import NavbarProfileDropdown from "@components/navbar/NavbarProfileDropdown";
+import TechSupportLinkIcon from "@components/navbar/TechSupportLinkIcon";
+// import NavbarNotificationBell from "@components/navbar/NotificationBell";
 
 export default function Navbar(): JSX.Element {
   return (
@@ -74,7 +75,8 @@ export default function Navbar(): JSX.Element {
 
           {/* Notification bell and profile dropdown. */}
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <NavbarNotificationBell />
+            {/* <NavbarNotificationBell /> */}
+            <TechSupportLinkIcon />
             <NavbarProfileDropdown />
           </div>
         </div>

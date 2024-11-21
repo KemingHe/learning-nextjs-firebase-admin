@@ -1,8 +1,7 @@
 import { type Page, expect, test } from "@playwright/test";
 
 test.beforeEach(async ({ page }: { page: Page }): Promise<void> => {
-  // Adding 60s timeout for the page to load on dev server.
-  await page.goto("/", { timeout: 60000 });
+  await page.goto("/");
 });
 
 test.describe("Basic routing", () => {
