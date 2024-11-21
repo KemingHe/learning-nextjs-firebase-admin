@@ -5,9 +5,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { type Context, createContext, useContext, useMemo } from "react";
 import { useAuthState } from "react-firehooks/auth";
 
-import { fbAuth } from "@lib/firebase/firebaseClientApp";
-
 import type { ProviderProps } from "@contexts/ProviderProps";
+import { fbAuth } from "@lib/firebase/firebaseClientApp";
 
 // -----------------------------------------------------------------------------
 // biome-ignore format: added alignment for clarity.

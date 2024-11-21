@@ -3,7 +3,7 @@
 exports[`ThemeToggle component > matches the snapshot 1`] = `
 <DocumentFragment>
   <label
-    class="flex cursor-pointer gap-2"
+    class="flex justify-center items-center cursor-pointer space-x-2"
     for="themeToggle"
   >
     <span
@@ -16,7 +16,6 @@ exports[`ThemeToggle component > matches the snapshot 1`] = `
       class="toggle theme-controller"
       id="themeToggle"
       type="checkbox"
-      value="light"
     />
   </label>
 </DocumentFragment>

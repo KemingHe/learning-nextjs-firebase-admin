@@ -5,6 +5,7 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
+import ThemeToggle from "@components/ThemeToggle";
 import NavbarNotificationBell from "@components/navbar/NavbarNotificationBell";
 import NavbarProfileDropdown from "@components/navbar/NavbarProfileDropdown";
 
@@ -31,11 +32,12 @@ export default function Navbar(): JSX.Element {
 
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              <img
+              {/* <img
                 alt="Your Company"
                 src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
                 className="h-8 w-auto"
-              />
+              /> */}
+              <ThemeToggle />
             </div>
 
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">

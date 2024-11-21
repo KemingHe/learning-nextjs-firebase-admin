@@ -4,11 +4,7 @@
   "name": "learning-nextjs-firebase-admin",
   "description": "Template repo demo-ing Firebase client and admin auth ntegration with NextJS 14+.",
   "version": "0.4.1",
-  "keywords": [
-    "nextjs",
-    "firebase",
-    "firebase-admin"
-  ],
+  "keywords": ["nextjs", "firebase", "firebase-admin"],
   "homepage": "https://firebaseadmin.learn.data-glow.com",
   "license": "MIT",
   "author": {
@@ -29,25 +25,30 @@
     "emulators": "firebase emulators:start --import .emulators --export-on-exit",
     "lint": "biome check --write .",
     "build": "next build",
-    "pretest": "pnpm run lint",
-    "test": "vitest",
+    "test:unit": "vitest",
+    "test:unit:update": "vitest --update",
+    "test:e2e": "playwright test --debug",
+    "test": "pnpm run test:unit && pnpm run test:e2e",
     "dev": "next dev --turbopack",
     "start": "next start"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "@hookform/resolvers": "^3.9.1",
     "firebase": "^11.0.2",
     "firebase-admin": "^13.0.1",
     "next": "15.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-firehooks": "^4.2.0",
+    "react-hook-form": "^7.53.2",
     "server-only": "^0.0.1",
     "uuid": "^11.0.3"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@playwright/test": "^1.49.0",
     "@release-it/conventional-changelog": "^9.0.3",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",

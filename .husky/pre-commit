@@ -5,6 +5,8 @@ pnpm update
 
 pnpm run lint
 pnpm run build
-pnpm test
+
+pnpm run test:unit
+# pnpm test
 
 git add -A

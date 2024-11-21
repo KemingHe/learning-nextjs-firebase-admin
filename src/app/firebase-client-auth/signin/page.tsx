@@ -2,7 +2,7 @@
 
 import SignInCard from "@components/signInCard/SignInCard";
 
-import { fbAuth } from "@src/lib/firebase/firebaseClientApp";
+import { fbAuth } from "@lib/firebase/firebaseClientApp";
 
 import signInAction from "@components/signInCard/signInAction";
 import { useAuthContext } from "@contexts/authContext/AuthContext";

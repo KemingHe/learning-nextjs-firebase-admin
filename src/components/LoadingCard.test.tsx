@@ -25,7 +25,9 @@ describe("LoadingCard component", () => {
   });
 
   it("matches the snapshot", () => {
-    const { asFragment } = render(<LoadingCard message={loadingMessage} />);
+    const { asFragment }: RenderResult = render(
+      <LoadingCard message={loadingMessage} />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 });
