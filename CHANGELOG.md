@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.0](https://github.com/KemingHe/learning-nextjs-firebase-admin/compare/v0.6.0...v0.7.0) (2024-11-22)
+
+### Features
+
+* **protobutton/:** added protobutton and action modules to demo client/server action w/ comp ([e442795](https://github.com/KemingHe/learning-nextjs-firebase-admin/commit/e442795a2f8b9bb31a6727028aeb8bdd7ec2f07e))
+
 ## [0.6.0](https://github.com/KemingHe/learning-nextjs-firebase-admin/compare/v0.5.0...v0.6.0) (2024-11-21)
 
 ### Features
