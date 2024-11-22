@@ -51,7 +51,7 @@ export default function RedirectIfSignedInGuard({
   ]);
 
   useEffect(() => {
-    // Use empty dep list and return to cleanup on unmount.
+    // Use [empty dep list and return] to cleanup on component unmount.
     return () => {
       stopLoading();
     };

@@ -9,7 +9,7 @@ import {
   FB_CLIENT_VERIFY_ROUTE
 } from "@constants/routeConstants";
 
-export default async function Homepage(): Promise<JSX.Element> {
+export default async function FirebaseClientDemoHomepage(): Promise<JSX.Element> {
   return (
     <div className="flex flex-col justify-center items-center space-y-5">
       <p>Firebase Client Demo</p>

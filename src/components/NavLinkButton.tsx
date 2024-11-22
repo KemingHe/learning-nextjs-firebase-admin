@@ -10,7 +10,7 @@ export function NavLinkButton({ href, text }: NavLinkButtonProps): JSX.Element {
   return (
     <Link href={href} className="btn btn-primary btn-sm flex items-center">
       <span className="-mr-1.5">{text}</span>
-      <ArrowUpRightIcon className="w-4 h-4" />
+      <ArrowUpRightIcon className="size-4" />
     </Link>
   );
 }

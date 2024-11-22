@@ -2,8 +2,13 @@
 
 import type { AuthError, User } from "firebase/auth";
 import { usePathname, useRouter } from "next/navigation";
-import type { ReactNode } from "react";
-import { type Context, createContext, useContext, useMemo } from "react";
+import {
+  type Context,
+  type ReactNode,
+  createContext,
+  useContext,
+  useMemo
+} from "react";
 import { useAuthState } from "react-firehooks/auth";
 
 import ErrorCard from "@components/ErrorCard";
@@ -35,7 +40,6 @@ export function AuthProvider({
 }: Readonly<{ children: ReactNode }>): JSX.Element {
   const clientRouter = useRouter();
   const pathname = usePathname();
-
   const [user, loadingUser, errorUser] = useAuthState(fbAuth);
   const authContextValue = useMemo(
     () =>

@@ -1,5 +1,3 @@
-"use client";
-
 import { sendSignInLinkToEmail } from "firebase/auth";
 
 import {

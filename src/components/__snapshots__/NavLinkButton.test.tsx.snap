@@ -13,7 +13,7 @@ exports[`NavLinkButton component > matches the snapshot 1`] = `
     </span>
     <svg
       aria-hidden="true"
-      class="w-4 h-4"
+      class="size-4"
       data-slot="icon"
       fill="currentColor"
       viewBox="0 0 24 24"
